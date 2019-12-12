@@ -13,13 +13,19 @@ Exercício: levantamento de Requisitos Funcionais e não funcionais. Desenhar o 
 ## Requisitos funcionais
 
 RF001 - Gerenciar cliente
+
 RF002 - Realizar festa
+
 RF003 - Gerenciar tema
+
 RF004 - Gerenciar item tema
+
 RF005 - Gerenciar funcionário
 
 ## Requisitos não funcionais
 
 RNF001 - O tempo de resposta para qualquer tela, tem que ser menor ou igual a 5 segundos em 90% dos casos [DESEMPENHO].
+
 RNF002 - O sistema terá um módulo de autenticação de usuários e senhas, e as senhas serão criptografadas no banco em 100% dos casos [SEGURANÇA].
+
 RNF003 - Para todas as telas da aplicação, o número de cliques deve ser menor ou igual a 5 em 100% dos casos [USABILIDADE].

@@ -1,0 +1,10 @@
+// {type:usecase}
+// {direction:leftToRight}
+[Supervisor]-(Gerenciar Cliente)
+[Supervisor]-(Gerenciar Tema)
+[Supervisor]-(Gerenciar Funcionário)
+(Gerenciar Tema)<(Gerenciar Itens Tema)
+(Realizar Festa)>(Gerenciar Cliente)
+(Realizar Festa)>(Gerenciar Tema)
+(Realizar Festa)>(Gerenciar Funcionário)
+[Supervisor]-(Realizar Festa)
