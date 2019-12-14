@@ -1,6 +1,6 @@
 // {type:class}
 // {direction:leftToRight}
-[Cliente|- idCliente: int|- nomeCliente: String|- telefone: String|- email: String|- cpf: String|+ incluir(): void|+ listar(): void|+ deletar(): void|+ atualizar(): void]1-contrata 1..*>[Festa|- idFesta: int|- localFesta:String|- dataFesta: date|- horaFesta: time|- valorFesta: float|- obs: text|+ lancamentoFesta(): void|+ listagemHistorico(): void|+ validacaoFesta(): void|+ relatorioFestasPeriodo(): void]
+[Cliente|- idCliente: int|- nomeCliente: String|- telefone: String|- email: String|- cpf: String|+ incluir(): void|+ listar(): void|+ deletar(): void|+ atualizar(): void]1-contrata 1..*>[Festa|- idFesta: int|- localFesta:String|- dataFesta: date|- horaFesta: time|- valorFesta: float|- obs: text|+ lancamentoFesta(): void|+ listagemHistorica(): void|+ validacaoFesta(): void|+ relatorioFestasPeriodo(): void]
 [Festa]1..*-possui 1..2>[Tema|- idTema: int|- nomeTema: String|- corPrincipal: String|+ crud(): void]
 [Festa]<1..* vende-1[Funcionario|- idFuncionario: int|- nomeFuncionario: String|- salarioFuncionario: float|- idadeFuncionario: int|+ crud(): void]
 [Tema]<>1- possui 1..*[Item_Tema|- idItem: int|- descricaoItem: String|+ crud(): void]

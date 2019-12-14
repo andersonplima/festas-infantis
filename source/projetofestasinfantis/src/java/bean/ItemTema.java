@@ -12,6 +12,15 @@ package bean;
 public class ItemTema {
     private int idItem;
     private String descricaoItem;
+    private int idTema;
+
+    public int getIdTema() {
+        return idTema;
+    }
+
+    public void setIdTema(int idTema) {
+        this.idTema = idTema;
+    }
 
     public int getIdItem() {
         return idItem;

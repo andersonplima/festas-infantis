@@ -5,21 +5,19 @@
  */
 package conexao;
 
+import java.sql.Driver;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ander
  */
 public class Conectar {
-
-    //  static ResourceBundle res = ResourceBundle.getBundle("siscep.Res");
     private static boolean DEBUG = false;
-    private Connection connection;
-    private final String driver = "com.mysql.cj.jdbc.Driver";
-    // Parametros de Produção - Tauceti.
     private static Conectar rep = null;
 
     private Conectar() {
@@ -27,14 +25,19 @@ public class Conectar {
 
     public static synchronized Conectar getInstance() {
         if (rep == null) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(Conectar.class.getName()).log(Level.SEVERE, null, ex);
+            }
             rep = new Conectar();
         }
         return rep;
     }
 
-    public static Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException {
         Connection connection = null;
-        try {
+        try {            
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbfestasinfantis" + "?user=root&password=Vs120499");
         } catch (SQLException sex) {
             throw new SQLException(sex.getMessage());
@@ -42,7 +45,7 @@ public class Conectar {
         return connection;
     }
 
-    public static void devolveconexao(Connection connection) throws SQLException {
+    public void devolveconexao(Connection connection) throws SQLException {
         try {
             connection.close();
         } catch (Exception ex) {
